@@ -8,7 +8,10 @@
         select * from user where id = #{id}
     </select>
     <select id="selectByName" parameterType="String" resultType="User">
-        select * from user where string = #{username}
+        select * from user where username = #{username}
+    </select>
+    <select id="selectByEmail" parameterType="String" resultType="User">
+        select * from user where email = #{email}
     </select>
     <insert id="insertUser" parameterType="User" keyProperty="id">
         insert into user (username, password, salt, email, type, status, activation_code, header_url, create_time)
